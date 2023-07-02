@@ -20,3 +20,14 @@ func (treeItem TreeItem) GetChildrenIDs() []int {
 	}
 	return childrenIDs
 }
+
+func (treeItem TreeItem) GetChildrenAsList() List {
+	out := List{}
+
+	for _, treeItemChild := range treeItem.Children {
+		out = append(out, treeItemChild.ToListItem())
+		out = append(out, treeItemChild.GetChildrenAsList()...)
+	}
+
+	return out
+}

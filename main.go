@@ -3,11 +3,18 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("asd")
+	fmt.Println("tree-2-list-2-tree")
 }
 
 func (tree Tree) ToList() List {
-	return List{}
+	outList := List{}
+
+	for _, treeItem := range tree {
+		outList = append(outList, treeItem.ToListItem())
+		outList = append(outList, treeItem.GetChildrenAsList()...)
+	}
+
+	return outList
 }
 
 func (list List) ToTree() Tree {
