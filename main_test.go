@@ -9,7 +9,6 @@ import (
 func TestListToTree(t *testing.T) {
 
 	// prepare
-
 	list1 := List{
 		{ID: 1},
 		/* */ {ID: 3, ParentItemID: 1},
@@ -56,10 +55,8 @@ func TestListToTree(t *testing.T) {
 	}
 
 	// act
-
 	out1 := list1.ToTree()
 
 	// assert
-
 	assert.Equal(t, tree1, out1)
 }
