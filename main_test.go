@@ -73,7 +73,7 @@ func TestTreeToList(t *testing.T) {
 		},
 		{
 			ID: 2,
-			Children: []TreeItem{
+			Children: Tree{
 				{ID: 5, ParentItemID: 2},
 				{ID: 6, ParentItemID: 2},
 			},

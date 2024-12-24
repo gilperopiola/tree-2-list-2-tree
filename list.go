@@ -1,11 +1,9 @@
 package main
 
+// outTree contains the root items
+// modifiersList stores all the modifiers
+// rootIDs holds the IDs of the root items
 func (list List) prepareToConvertToTree() (outTree Tree, modifiersList List, rootIDs []int) {
-
-	// outTree contains the root items
-	// modifiersList stores all the modifiers
-	// rootIDs holds the IDs of the root items
-
 	for _, item := range list {
 		if item.IsRoot() {
 			outTree = append(outTree, item.ToTreeItemWithoutChildren())
